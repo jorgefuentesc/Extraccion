@@ -25,8 +25,13 @@ if movie_show_container:
     
     for movie_box in movie_boxes:
         horas_esp = movie_box.find_all(class_='movie-schedule')
-        for hora_esp in horas_esp:
-            print(hora_esp.get_text())
+        hora_peli = movie_box.find_all(class_ = 'box-movie-format')
+        for peli_hora in hora_peli:
+            hour = peli_hora.get_text()
+            print(hour)
+        titulo_peli = movie_box.find(class_ = 'movie-title')
+        titulo_peli_test_a = movie_box.find('a')
+        print(titulo_peli_test_a)
         print("-" * 30)
 else:
     print("No se encontró el contenedor con clase 'movies-container'")
